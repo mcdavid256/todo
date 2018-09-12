@@ -61,7 +61,7 @@ Bootstrap Switch
 .onoffswitch {
     position: relative; width: 90px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-
+    
 }
 .onoffswitch-checkbox {
     display: none;
@@ -76,7 +76,7 @@ Bootstrap Switch
 }
 .onoffswitch-inner:before, .onoffswitch-inner:after {
     display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-    font-size: 14px; color: white;
+    font-size: 14px; color: white; 
     box-sizing: border-box;
 }
 .onoffswitch-inner:before {
@@ -96,11 +96,12 @@ Bootstrap Switch
     position: absolute; top: 0; bottom: 0;
     right: 56px;
     border: 2px solid $success; border-radius: 20px;
-    transition: all 0.3s ease-in 0s;
+    transition: all 0.3s ease-in 0s; 
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
     margin-left: 0;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0px;
+    right: 0px; 
 }
+

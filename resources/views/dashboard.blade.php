@@ -8,8 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Favicon icon -->
+    <link rel="icon" type="{{asset('image/png')}}" sizes="16x16" href="{{asset('images/favicon.png')}}">
+    <title>Dashboard</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <link rel="stylesheet" href="{{asset('css/colors/default.css')}}">
+    <link rel="stylesheet" href="{{asset('css/assets.css')}}">
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,16 +23,16 @@
 <![endif]-->
 </head>
 
-<body class="fix-header fix-sidebar card-no-border">
+<body class="fix-header card-no-border fix-sidebar">
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
             <p class="loader__label">Admin Wrap</p>
         </div>
-    </div>
+    </div> -->
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -46,16 +50,16 @@
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="{{asset('admin/images/logo-icon.png')}}" alt="homepage" class="dark-logo" />
+                            <img src="{{asset('images/logo-icon.png')}}" alt="homepage" class="dark-logo" />
                             <!-- Light Logo icon -->
-                            <img src="{{asset('admin/images/logo-light-icon.png')}}" alt="homepage" class="light-logo" />
+                            <img src="{{asset('images/logo-light-icon.png')}}" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
                          <!-- dark Logo text -->
-                         <img src="{{asset('admin/images/logo-text.png')}}" alt="homepage" class="dark-logo" />
+                         <img src="{{asset('images/logo-text.png')}}" alt="homepage" class="dark-logo" />
                          <!-- Light Logo text -->
-                         <img src="{{asset('admin/images/logo-light-text.png')}}" class="light-logo" alt="homepage" /></span> </a>
+                         <img src="{{asset('images/logo-light-text.png')}}" class="light-logo" alt="homepage" /></span> </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -145,25 +149,25 @@
                                         <div class="message-center">
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="{{asset('admin/images/users/1.jpg')}}" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                                <div class="user-img"> <img src="{{asset('images/users/1.jpg')}}" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
                                                 <div class="mail-contnet">
                                                     <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span> </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="{{asset('admin/images/users/2.jpg')}}" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+                                                <div class="user-img"> <img src="{{asset('images/users/2.jpg')}}" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
                                                 <div class="mail-contnet">
                                                     <h5>Sonu Nigam</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span> </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="{{asset('admin/images/users/3.jpg')}}" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                                <div class="user-img"> <img src="{{asset('images/users/3.jpg')}}" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
                                                 <div class="mail-contnet">
                                                     <h5>Arijit Sinh</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span> </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="{{asset('admin/images/users/4.jpg')}}" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+                                                <div class="user-img"> <img src="{{asset('images/users/4.jpg')}}" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
                                                 <div class="mail-contnet">
                                                     <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
                                             </a>
@@ -190,13 +194,13 @@
                                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                             <div class="carousel-inner" role="listbox">
                                                 <div class="carousel-item active">
-                                                    <div class="container"> <img class="d-block img-fluid" src="{{asset('admin/images/users/1.jpg')}}" alt="First slide"></div>
+                                                    <div class="container"> <img class="d-block img-fluid" src="{{asset('images/big/img1.jpg')}}" alt="First slide"></div>
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <div class="container"><img class="d-block img-fluid" src="{{asset('admin/images/users/2.jpg')}}" alt="Second slide"></div>
+                                                    <div class="container"><img class="d-block img-fluid" src="{{asset('images/big/img2.jpg')}}" alt="Second slide"></div>
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <div class="container"><img class="d-block img-fluid" src="{{asset('admin/images/users/3.jpg')}}" alt="Third slide"></div>
+                                                    <div class="container"><img class="d-block img-fluid" src="{{asset('images/big/img3.jpg')}}" alt="Third slide"></div>
                                                 </div>
                                             </div>
                                             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
@@ -285,12 +289,12 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('admin/images/users/1.jpg')}}" alt="user" class="" /> <span class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('images/users/1.jpg')}}" alt="user" class="" /> <span class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span> </a>
                             <div class="dropdown-menu dropdown-menu-right animated flipInY">
                                 <ul class="dropdown-user">
                                     <li>
                                         <div class="dw-user-box">
-                                            <div class="u-img"><img src="{{asset('admin/images/users/1.jpg')}}" alt="user"></div>
+                                            <div class="u-img"><img src="{{asset('images/users/1.jpg')}}" alt="user"></div>
                                             <div class="u-text">
                                                 <h4>Steave Jobs</h4>
                                                 <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
@@ -332,189 +336,6 @@
                                 <li><a href="index4.html">Modern</a></li>
                             </ul>
                         </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Double-Circle"></i><span class="hide-menu">Apps</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="app-calendar.html">Calendar</a></li>
-                                <li><a href="app-chat.html">Chat app</a></li>
-                                <li><a href="app-ticket.html">Support Ticket</a></li>
-                                <li><a href="app-contact.html">Contact / Employee</a></li>
-                                <li><a href="app-contact2.html">Contact Grid</a></li>
-                                <li><a href="app-contact-detail.html">Contact Detail</a></li>
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Box-Full"></i><span class="hide-menu">Inbox</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="app-email.html">Mailbox</a></li>
-                                <li><a href="app-email-detail.html">Mailbox Detail</a></li>
-                                <li><a href="app-compose.html">Compose Mail</a></li>
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-On-Off-3"></i><span class="hide-menu">Ui Elements <span class="label label-rounded label-success">25</span></span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="ui-cards.html">Cards</a></li>
-                                <li><a href="ui-user-card.html">User Cards</a></li>
-                                <li><a href="ui-buttons.html">Buttons</a></li>
-                                <li><a href="ui-modals.html">Modals</a></li>
-                                <li><a href="ui-tab.html">Tab</a></li>
-                                <li><a href="ui-tooltip-popover.html">Tooltip &amp; Popover</a></li>
-                                <li><a href="ui-tooltip-stylish.html">Tooltip stylish</a></li>
-                                <li><a href="ui-sweetalert.html">Sweet Alert</a></li>
-                                <li><a href="ui-notification.html">Notification</a></li>
-                                <li><a href="ui-progressbar.html">Progressbar</a></li>
-                                <li><a href="ui-nestable.html">Nestable</a></li>
-                                <li><a href="ui-range-slider.html">Range slider</a></li>
-                                <li><a href="ui-timeline.html">Timeline</a></li>
-                                <li><a href="ui-typography.html">Typography</a></li>
-                                <li><a href="ui-horizontal-timeline.html">Horizontal Timeline</a></li>
-                                <li><a href="ui-session-timeout.html">Session Timeout</a></li>
-                                <li><a href="ui-session-ideal-timeout.html">Session Ideal Timeout</a></li>
-                                <li><a href="ui-bootstrap.html">Bootstrap Ui</a></li>
-                                <li><a href="ui-breadcrumb.html">Breadcrumb</a></li>
-                                <li><a href="ui-bootstrap-switch.html">Bootstrap Switch</a></li>
-                                <li><a href="ui-list-media.html">List Media</a></li>
-                                <li><a href="ui-ribbons.html">Ribbons</a></li>
-                                <li><a href="ui-grid.html">Grid</a></li>
-                                <li><a href="ui-carousel.html">Carousel</a></li>
-                                <li><a href="ui-date-paginator.html">Date-paginator</a></li>
-                                <li><a href="ui-dragable-portlet.html">Dragable Portlet</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-small-cap">--- FORMS, TABLE &amp; WIDGETS</li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Receipt-4"></i><span class="hide-menu">Forms</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="form-basic.html">Basic Forms</a></li>
-                                <li><a href="form-layout.html">Form Layouts</a></li>
-                                <li><a href="form-addons.html">Form Addons</a></li>
-                                <li><a href="form-material.html">Form Material</a></li>
-                                <li><a href="form-float-input.html">Floating Lable</a></li>
-                                <li><a href="form-pickers.html">Form Pickers</a></li>
-                                <li><a href="form-upload.html">File Upload</a></li>
-                                <li><a href="form-mask.html">Form Mask</a></li>
-                                <li><a href="form-validation.html">Form Validation</a></li>
-                                <li><a href="form-dropzone.html">File Dropzone</a></li>
-                                <li><a href="form-icheck.html">Icheck control</a></li>
-                                <li><a href="form-img-cropper.html">Image Cropper</a></li>
-                                <li><a href="form-bootstrapwysihtml5.html">HTML5 Editor</a></li>
-                                <li><a href="form-typehead.html">Form Typehead</a></li>
-                                <li><a href="form-wizard.html">Form Wizard</a></li>
-                                <li><a href="form-xeditable.html">Xeditable Editor</a></li>
-                                <li><a href="form-summernote.html">Summernote Editor</a></li>
-                                <li><a href="form-tinymce.html">Tinymce Editor</a></li>
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Split-Vertical"></i><span class="hide-menu">Tables</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="table-basic.html">Basic Tables</a></li>
-                                <li><a href="table-layout.html">Table Layouts</a></li>
-                                <li><a href="table-data-table.html">Data Tables</a></li>
-                                <li><a href="table-footable.html">Footable</a></li>
-                                <li><a href="table-jsgrid.html">Js Grid Table</a></li>
-                                <li><a href="table-responsive.html">Responsive Table</a></li>
-                                <li><a href="table-bootstrap.html">Bootstrap Tables</a></li>
-                                <li><a href="table-editable-table.html">Editable Table</a></li>
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Windows-2"></i><span class="hide-menu">Widgets</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="widget-data.html">Data Widgets</a></li>
-                                <li><a href="widget-apps.html">Apps Widgets</a></li>
-                                <li><a href="widget-charts.html">Charts Widgets</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-small-cap">--- EXTRA COMPONENTS</li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-File"></i><span class="hide-menu">Page Layout</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="layout-single-column.html">1 Column</a></li>
-                                <li><a href="layout-fix-header.html">Fix header</a></li>
-                                <li><a href="layout-fix-sidebar.html">Fix sidebar</a></li>
-                                <li><a href="layout-fix-header-sidebar.html">Fixe header &amp; Sidebar</a></li>
-                                <li><a href="layout-boxed.html">Boxed Layout</a></li>
-                                <li><a href="layout-logo-center.html">Logo in Center</a></li>
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Files"></i><span class="hide-menu">Sample Pages <span class="label label-rounded label-info">25</span></span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="starter-kit.html">Starter Kit</a></li>
-                                <li><a href="pages-blank.html">Blank page</a></li>
-                                <li><a href="#" class="has-arrow">Authentication <span class="label label-rounded label-success pull-right">6</span></a>
-                                    <ul aria-expanded="false" class="collapse">
-                                        <li><a href="pages-login.html">Login 1</a></li>
-                                        <li><a href="pages-login-2.html">Login 2</a></li>
-                                        <li><a href="pages-register.html">Register</a></li>
-                                        <li><a href="pages-register2.html">Register 2</a></li>
-                                        <li><a href="pages-lockscreen.html">Lockscreen</a></li>
-                                        <li><a href="pages-recover-password.html">Recover password</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="pages-profile.html">Profile page</a></li>
-                                <li><a href="pages-animation.html">Animation</a></li>
-                                <li><a href="pages-fix-innersidebar.html">Sticky Left sidebar</a></li>
-                                <li><a href="pages-fix-inner-right-sidebar.html">Sticky Right sidebar</a></li>
-                                <li><a href="pages-invoice.html">Invoice</a></li>
-                                <li><a href="pages-treeview.html">Treeview</a></li>
-                                <li><a href="pages-utility-classes.html">Helper Classes</a></li>
-                                <li><a href="pages-search-result.html">Search result</a></li>
-                                <li><a href="pages-scroll.html">Scrollbar</a></li>
-                                <li><a href="pages-pricing.html">Pricing</a></li>
-                                <li><a href="pages-lightbox-popup.html">Lighbox popup</a></li>
-                                <li><a href="pages-gallery.html">Gallery</a></li>
-                                <li><a href="pages-faq.html">Faqs</a></li>
-                                <li><a href="#" class="has-arrow">Error Pages</a>
-                                    <ul aria-expanded="false" class="collapse">
-                                        <li><a href="pages-error-400.html">400</a></li>
-                                        <li><a href="pages-error-403.html">403</a></li>
-                                        <li><a href="pages-error-404.html">404</a></li>
-                                        <li><a href="pages-error-500.html">500</a></li>
-                                        <li><a href="pages-error-503.html">503</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Pie-Chart"></i><span class="hide-menu">Charts</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="chart-morris.html">Morris Chart</a></li>
-                                <li><a href="chart-chartist.html">Chartis Chart</a></li>
-                                <li><a href="chart-echart.html">Echarts</a></li>
-                                <li><a href="chart-flot.html">Flot Chart</a></li>
-                                <li><a href="chart-knob.html">Knob Chart</a></li>
-                                <li><a href="chart-chart-js.html">Chartjs</a></li>
-                                <li><a href="chart-sparkline.html">Sparkline Chart</a></li>
-                                <li><a href="chart-extra-chart.html">Extra chart</a></li>
-                                <li><a href="chart-peity.html">Peity Charts</a></li>
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Prater"></i><span class="hide-menu">Icons</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="icon-material.html">Material Icons</a></li>
-                                <li><a href="icon-fontawesome.html">Fontawesome Icons</a></li>
-                                <li><a href="icon-themify.html">Themify Icons</a></li>
-                                <li><a href="icon-weather.html">Weather Icons</a></li>
-                                <li><a href="icon-iconmind.html">Mind Icons</a></li>
-                                <li><a href="icon-simple-lineicon.html">Simple Line icons</a></li>
-                                <li><a href="icon-flag.html">Flag Icons</a></li>
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Map-Marker2"></i><span class="hide-menu">Maps</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="map-google.html">Google Maps</a></li>
-                                <li><a href="map-vector.html">Vector Maps</a></li>
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-El-Castillo"></i><span class="hide-menu">Multi level dd</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="#">item 1.1</a></li>
-                                <li><a href="#">item 1.2</a></li>
-                                <li> <a class="has-arrow" href="#" aria-expanded="false">Menu 1.3</a>
-                                    <ul aria-expanded="false" class="collapse">
-                                        <li><a href="#">item 1.3.1</a></li>
-                                        <li><a href="#">item 1.3.2</a></li>
-                                        <li><a href="#">item 1.3.3</a></li>
-                                        <li><a href="#">item 1.3.4</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">item 1.4</a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -537,10 +358,10 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Dashboard 1</h3>
+                        <h3 class="text-themecolor">Blank Page</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard 1</li>
+                            <li class="breadcrumb-item active">Blank Page</li>
                         </ol>
                     </div>
                     <div class="col-md-7 align-self-center text-right d-none d-md-block">
@@ -554,533 +375,26 @@
                 <!-- End Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
-                <!-- Info box -->
+                <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <!-- Column -->
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-2">
                         <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex p-10 no-block">
-                                    <div class="align-slef-center">
-                                        <h2 class="m-b-0">234</h2>
-                                        <h6 class="text-muted m-b-0">New Clients</h6>
-                                    </div>
-                                    <div class="align-self-center display-6 ml-auto"><i class="text-success icon-Target-Market"></i></div>
-                                </div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:70%; height:3px;"> <span class="sr-only">50% Complete</span></div>
-                            </div>
+                          <div class="card-body">
+                              <strong>Card Title</strong>
+                          </div>
+                          <div class="card-body">
+                              This is some text within a card block.
+                          </div>
+                          <div class="card-body">
+                              This is some text within a card block.
+                          </div>
                         </div>
                     </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex p-10 no-block">
-                                    <div class="align-slef-center">
-                                        <h2 class="m-b-0">$6,759</h2>
-                                        <h6 class="text-muted m-b-0">This Week</h6>
-                                    </div>
-                                    <div class="align-self-center display-6 ml-auto"><i class="text-info icon-Dollar-Sign"></i></div>
-                                </div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:70%; height:3px;"> <span class="sr-only">50% Complete</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex p-10 no-block">
-                                    <div class="align-slef-center">
-                                        <h2 class="m-b-0">2,356</h2>
-                                        <h6 class="text-muted m-b-0">Emails Sent</h6>
-                                    </div>
-                                    <div class="align-self-center display-6 ml-auto"><i class="text-primary icon-Inbox-Forward"></i></div>
-                                </div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:70%; height:3px;"> <span class="sr-only">50% Complete</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex p-10 no-block">
-                                    <div class="align-slef-center">
-                                        <h2 class="m-b-0">38</h2>
-                                        <h6 class="text-muted m-b-0">Deals in Pipeline</h6>
-                                    </div>
-                                    <div class="align-self-center display-6 ml-auto"><i class="text-danger icon-Contrast"></i></div>
-                                </div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:70%; height:3px;"> <span class="sr-only">50% Complete</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
+
                 </div>
                 <!-- ============================================================== -->
-                <!-- End Info box -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Over Visitor, Our income , slaes different and  sales prediction -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <!-- Column -->
-                    <div class="col-lg-4 col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex m-b-30 no-block">
-                                    <h5 class="card-title m-b-0 align-self-center">Our Visitors</h5>
-                                    <div class="ml-auto">
-                                        <select class="custom-select b-0">
-                                            <option selected="">Today</option>
-                                            <option value="1">Tomorrow</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div id="visitor" style="height:260px; width:100%;"></div>
-                                <ul class="list-inline m-t-30 text-center font-12">
-                                    <li><i class="fa fa-circle text-purple"></i> Tablet</li>
-                                    <li><i class="fa fa-circle text-success"></i> Desktops</li>
-                                    <li><i class="fa fa-circle text-info"></i> Mobile</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-lg-4 col-md-12">
-                        <div class="card o-income">
-                            <div class="card-body">
-                                <div class="d-flex m-b-30 no-block">
-                                    <h5 class="card-title m-b-0 align-self-center">Our Income</h5>
-                                    <div class="ml-auto">
-                                        <select class="custom-select b-0">
-                                            <option selected="">January</option>
-                                            <option value="1">February</option>
-                                            <option value="2">March</option>
-                                            <option value="3">April</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div id="income" style="height:260px; width:100%;"></div>
-                                <ul class="list-inline m-t-30 text-center font-12">
-                                    <li><i class="fa fa-circle text-success"></i> Growth</li>
-                                    <li><i class="fa fa-circle text-info"></i> Net</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-lg-4 col-md-12">
-                        <div class="row">
-                            <!-- Column -->
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Sales Difference</h5>
-                                        <div class="d-flex no-block">
-                                            <div class="align-self-center no-shrink">
-                                                <h2 class="m-b-0">$4316</h2>
-                                                <h6 class="text-muted">(150-165 Sales)</h6>
-                                            </div>
-                                            <div class="ml-auto">
-                                                <div id="sales" class="" style=" width:150px; height:140px;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Column -->
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Sales Prediction</h5>
-                                        <div class="d-flex no-block">
-                                            <div class="align-self-end no-shrink">
-                                                <h2 class="m-b-0">$3528</h2>
-                                                <h6 class="text-muted">(150-165 Sales)</h6>
-                                            </div>
-                                            <div class="ml-auto">
-                                                <div id="prediction"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Column -->
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- Sales Chart and browser state-->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <!-- Column -->
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex no-block">
-                                    <div>
-                                        <h5 class="card-title m-b-0">Sales Chart</h5>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <ul class="list-inline text-center font-12">
-                                            <li><i class="fa fa-circle text-success"></i> SITE A</li>
-                                            <li><i class="fa fa-circle text-info"></i> SITE B</li>
-                                            <li><i class="fa fa-circle text-primary"></i> SITE C</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="" id="sales-chart" style="height: 355px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Browser Stats</h5>
-                                <table class="table browser m-t-30 no-border">
-                                    <tbody>
-                                        <tr>
-                                            <td style="width:40px"><img src="{{asset('admin/images/browser/chrome-logo.png')}}" alt="logo"></td>
-                                            <td>Google Chrome</td>
-                                            <td class="text-right">23%</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="{{asset('admin/images/browser/firefox-logo.png')}}" alt="logo"></td>
-                                            <td>Mozila Firefox</td>
-                                            <td class="text-right">15%</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="{{asset('admin/images/browser/safari-logo.png')}}" alt="logo"></td>
-                                            <td>Apple Safari</td>
-                                            <td class="text-right">07%</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="{{asset('admin/images/browser/internet-logo.png')}}" alt="logo"></td>
-                                            <td>Internet Explorer</td>
-                                            <td class="text-right">09%</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="{{asset('admin/images/browser/opera-logo.png')}}" alt="logo"></td>
-                                            <td>Opera mini</td>
-                                            <td class="text-right">23%</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="{{asset('admin/images/browser/netscape-logo.png')}}" alt="logo"></td>
-                                            <td>Netscape Navigator</td>
-                                            <td class="text-right">04%</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Sales Chart -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Projects of the Month -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <!-- Column -->
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex">
-                                    <div>
-                                        <h5 class="card-title">Projects of the Month</h5>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <select class="custom-select b-0">
-                                            <option selected="">January</option>
-                                            <option value="1">February</option>
-                                            <option value="2">March</option>
-                                            <option value="3">April</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="table-responsive m-t-20 no-wrap">
-                                    <table class="table vm no-th-brd pro-of-month">
-                                        <thead>
-                                            <tr>
-                                                <th colspan="2">Assigned</th>
-                                                <th>Name</th>
-                                                <th>Priority</th>
-                                                <th>Budget</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td style="width:50px;"><span class="round">S</span></td>
-                                                <td>
-                                                    <h6>Sunil Joshi</h6><small class="text-muted">Web Designer</small></td>
-                                                <td>Elite Admin</td>
-                                                <td><span class="label label-success label-rounded">Low</span></td>
-                                                <td>$3.9K</td>
-                                            </tr>
-                                            <tr class="active">
-                                                <td><span class="round"><img src="{{asset('admin/images/users/2.jpg')}}" alt="user" width="50"></span></td>
-                                                <td>
-                                                    <h6>Andrew</h6><small class="text-muted">Project Manager</small></td>
-                                                <td>Real Homes</td>
-                                                <td><span class="label label-info label-rounded">Medium</span></td>
-                                                <td>$23.9K</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="round round-success">B</span></td>
-                                                <td>
-                                                    <h6>Bhavesh patel</h6><small class="text-muted">Developer</small></td>
-                                                <td>MedicalPro Theme</td>
-                                                <td><span class="label label-primary label-rounded">High</span></td>
-                                                <td>$12.9K</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="round round-primary">N</span></td>
-                                                <td>
-                                                    <h6>Nirav Joshi</h6><small class="text-muted">Frontend Eng</small></td>
-                                                <td>Elite Admin</td>
-                                                <td><span class="label label-danger label-rounded">Low</span></td>
-                                                <td>$10.9K</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="round round-warning">M</span></td>
-                                                <td>
-                                                    <h6>Micheal Doe</h6><small class="text-muted">Content Writer</small></td>
-                                                <td>Helping Hands</td>
-                                                <td><span class="label label-success label-rounded">High</span></td>
-                                                <td>$12.9K</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="round round-danger">N</span></td>
-                                                <td>
-                                                    <h6>Johnathan</h6><small class="text-muted">Graphic</small></td>
-                                                <td>Digital Agency</td>
-                                                <td><span class="label label-info label-rounded">High</span></td>
-                                                <td>$2.6K</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex no-block">
-                                    <div>
-                                        <h5 class="card-title m-b-0">Weather</h5>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <select class="custom-select b-0">
-                                            <option selected="">January</option>
-                                            <option value="1">February</option>
-                                            <option value="2">March</option>
-                                            <option value="3">April</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center flex-row m-t-30">
-                                    <div class="p-2 display-5 text-info"><i class="wi wi-day-showers"></i> <span>73<sup>°</sup></span></div>
-                                    <div class="p-2">
-                                        <h3 class="m-b-0">Saturday</h3><small>Ahmedabad, India</small></div>
-                                </div>
-                                <table class="table no-border">
-                                    <tbody>
-                                        <tr>
-                                            <td>Wind</td>
-                                            <td class="font-medium">ESE 17 mph</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Humidity</td>
-                                            <td class="font-medium">83%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Pressure</td>
-                                            <td class="font-medium">28.56 in</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cloud Cover</td>
-                                            <td class="font-medium">78%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ceiling</td>
-                                            <td class="font-medium">25760 ft</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="card-body b-t">
-                                <ul class="list-unstyled row text-center city-weather-days">
-                                    <li class="col"><i class="wi wi-day-sunny"></i><span>09:30</span>
-                                        <h3>70<sup>°</sup></h3></li>
-                                    <li class="col"><i class="wi wi-day-cloudy"></i><span>11:30</span>
-                                        <h3>72<sup>°</sup></h3></li>
-                                    <li class="col"><i class="wi wi-day-hail"></i><span>13:30</span>
-                                        <h3>75<sup>°</sup></h3></li>
-                                    <li class="col"><i class="wi wi-day-sprinkle"></i><span>15:30</span>
-                                        <h3>76<sup>°</sup></h3></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Projects of the Month -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Comment - chats -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Recent Comments</h5>
-                            </div>
-                            <!-- ============================================================== -->
-                            <!-- Comment widgets -->
-                            <!-- ============================================================== -->
-                            <div class="comment-widgets">
-                                <!-- Comment Row -->
-                                <div class="d-flex flex-row comment-row">
-                                    <div class="p-2"><span class="round"><img src="{{asset('admin/images/users/1.jpg')}}" alt="user" width="50"></span></div>
-                                    <div class="comment-text w-100">
-                                        <h5>James Anderson</h5>
-                                        <p class="m-b-5">Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry.</p>
-                                        <div class="comment-footer">
-                                            <span class="text-muted pull-right">April 14, 2016</span> <span class="label label-rounded label-info">Pending</span> <span class="action-icons">
-                                                    <a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a>
-                                                    <a href="javascript:void(0)"><i class="ti-check"></i></a>
-                                                    <a href="javascript:void(0)"><i class="ti-heart"></i></a>
-                                                </span> </div>
-                                    </div>
-                                </div>
-                                <!-- Comment Row -->
-                                <div class="d-flex flex-row comment-row">
-                                    <div class="p-2"><span class="round"><img src="{{asset('admin/images/users/2.jpg')}}" alt="user" width="50"></span></div>
-                                    <div class="comment-text active w-100">
-                                        <h5>Michael Jorden</h5>
-                                        <p class="m-b-5">Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry..</p>
-                                        <div class="comment-footer ">
-                                            <span class="text-muted pull-right">April 14, 2016</span>
-                                            <span class="label label-success label-rounded">Approved</span>
-                                            <span class="action-icons active">
-                                                    <a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a>
-                                                    <a href="javascript:void(0)"><i class="icon-close"></i></a>
-                                                    <a href="javascript:void(0)"><i class="ti-heart text-danger"></i></a>
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Comment Row -->
-                                <div class="d-flex flex-row comment-row">
-                                    <div class="p-2"><span class="round"><img src="{{asset('admin/images/users/1.jpg')}}" alt="user" width="50"></span></div>
-                                    <div class="comment-text w-100">
-                                        <h5>Johnathan Doeting</h5>
-                                        <p class="m-b-5">Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has beenorem Ipsum is simply dummy text of the printing and type setting industry.</p>
-                                        <div class="comment-footer">
-                                            <span class="text-muted pull-right">April 14, 2016</span>
-                                            <span class="label label-rounded label-danger">Rejected</span>
-                                            <span class="action-icons">
-                                                    <a href="javascript:void(0)"><i class="ti-pencil-alt"></i></a>
-                                                    <a href="javascript:void(0)"><i class="ti-check"></i></a>
-                                                    <a href="javascript:void(0)"><i class="ti-heart"></i></a>
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Recent Chats</h5>
-                                <div class="chat-box">
-                                    <!--chat Row -->
-                                    <ul class="chat-list">
-                                        <!--chat Row -->
-                                        <li>
-                                            <div class="chat-img"><img src="{{asset('admin/images/users/1.jpg')}}" alt="user"></div>
-                                            <div class="chat-content">
-                                                <h5>James Anderson</h5>
-                                                <div class="box bg-light-info">Lorem Ipsum is simply dummy text of the printing &amp; type setting industry.</div>
-                                            </div>
-                                            <div class="chat-time">10:56 am</div>
-                                        </li>
-                                        <!--chat Row -->
-                                        <li>
-                                            <div class="chat-img"><img src="{{asset('admin/images/users/2.jpg')}}" alt="user"></div>
-                                            <div class="chat-content">
-                                                <h5>Bianca Doe</h5>
-                                                <div class="box bg-light-info">It’s Great opportunity to work.</div>
-                                            </div>
-                                            <div class="chat-time">10:57 am</div>
-                                        </li>
-                                        <!--chat Row -->
-                                        <li class="odd">
-                                            <div class="chat-content">
-                                                <div class="box bg-light-inverse">I would love to join the team.</div>
-                                                <br>
-                                            </div>
-                                            <div class="chat-time">10:58 am</div>
-                                        </li>
-                                        <!--chat Row -->
-                                        <li class="odd">
-                                            <div class="chat-content">
-                                                <div class="box bg-light-inverse">Whats budget of the new project.</div>
-                                                <br>
-                                            </div>
-                                            <div class="chat-time">10:59 am</div>
-                                        </li>
-                                        <!--chat Row -->
-                                        <li>
-                                            <div class="chat-img"><img src="{{asset('admin/images/users/3.jpg')}}" alt="user"></div>
-                                            <div class="chat-content">
-                                                <h5>Angelina Rhodes</h5>
-                                                <div class="box bg-light-info">Well we have good budget for the project</div>
-                                            </div>
-                                            <div class="chat-time">11:00 am</div>
-                                        </li>
-                                        <!--chat Row -->
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-body b-t">
-                                <div class="row">
-                                    <div class="col-8">
-                                        <textarea placeholder="Type your message here" class="form-control b-0"></textarea>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <button type="button" class="btn btn-info btn-circle btn-lg"><i class="fa fa-paper-plane-o"></i> </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Comment - chats -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- End Page Content -->
+                <!-- End PAge Content -->
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
                 <!-- Right sidebar -->
@@ -1109,28 +423,28 @@
                             <ul class="m-t-20 chatonline">
                                 <li><b>Chat option</b></li>
                                 <li>
-                                    <a href="javascript:void(0)"><img src="{{asset('admin/images/users/1.jpg')}}" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
+                                    <a href="javascript:void(0)"><img src="{{asset('images/users/1.jpg')}}" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)"><img src="{{asset('admin/images/users/2.jpg')}}" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
+                                    <a href="javascript:void(0)"><img src="{{asset('images/users/2.jpg')}}" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)"><img src="{{asset('admin/images/users/3.jpg')}}" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
+                                    <a href="javascript:void(0)"><img src="{{asset('images/users/3.jpg')}}" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)"><img src="{{asset('admin/images/users/4.jpg')}}" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
+                                    <a href="javascript:void(0)"><img src="{{asset('images/users/4.jpg')}}" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)"><img src="{{asset('admin/images/users/5.jpg')}}" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
+                                    <a href="javascript:void(0)"><img src="{{asset('images/users/5.jpg')}}" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)"><img src="{{asset('admin/images/users/6.jpg')}}" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
+                                    <a href="javascript:void(0)"><img src="{{asset('images/users/6.jpg')}}" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)"><img src="{{asset('admin/images/users/7.jpg')}}" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
+                                    <a href="javascript:void(0)"><img src="{{asset('images/users/7.jpg')}}" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)"><img src="{{asset('admin/images/users/8.jpg')}}" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
+                                    <a href="javascript:void(0)"><img src="{{asset('images/users/8.jpg')}}" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
                                 </li>
                             </ul>
                         </div>
@@ -1146,7 +460,9 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer"> © 2017 Adminwrap by wrappixel.com </footer>
+            <footer class="footer">
+                © 2017 Adminwrap by wrappixel.com
+            </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -1159,37 +475,7 @@
     <!-- End Wrapper -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="{{asset('js/node_modules/jquery/jquery.min.js')}}"></script>
-    <!-- Bootstrap popper Core JavaScript -->
-    <script src="{{asset('js/node_modules/bootstrap/js/popper.min.js')}}"></script>
-    <script src="{{asset('js/node_modules/bootstrap/js/bootstrap.min.js')}}"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="{{asset('js/node_modules/ps/perfect-scrollbar.jquery.min.js')}}"></script>
-    <!--Wave Effects -->
-    <script src="{{asset('js/waves.js')}}"></script>
-    <!--Menu sidebar -->
-    <script src="{{asset('js/sidebarmenu.js')}}"></script>
-    <!--Custom JavaScript -->
-    <script src="{{asset('js/custom.js')}}"></script>
-    <!-- ============================================================== -->
-    <!-- This page plugins -->
-    <!-- ============================================================== -->
-    <!--morris JavaScript -->
-    <script src="{{asset('js/node_modules/raphael/raphael-min.js')}}"></script>
-    <script src="{{asset('js/node_modules/morrisjs/morris.min.js')}}"></script>
-    <!--c3 JavaScript -->
-    <script src="{{asset('js/node_modules/d3/d3.min.js')}}"></script>
-    <script src="{{asset('js/node_modules/c3-master/c3.min.js')}}"></script>
-    <!-- Popup message jquery -->
-    <script src="{{asset('js/node_modules/toast-master/js/jquery.toast.js')}}"></script>
-    <!-- Chart JS -->
-    <script src="{{asset('js/dashboard1.js')}}"></script>
-    <!-- ============================================================== -->
-    <!-- Style switcher -->
-    <!-- ============================================================== -->
-    <script src="{{asset('js/node_modules/styleswitcher/jQuery.style.switcher.js')}}"></script>
+
 </body>
 
 </html>

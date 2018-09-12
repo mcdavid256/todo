@@ -12,7 +12,7 @@ chat application Page
 
 .chat-main-box {
     position: relative;
-
+    
     overflow: hidden;
     .chat-left-aside {
         position: relative;
@@ -86,7 +86,7 @@ chat application Page
                 height: 80px;
                 padding-right: 180px;
                 &:focus {
-                    border-color: $border;
+                    border-color: $border; 
                 }
             }
             .custom-send {
@@ -101,3 +101,5 @@ chat application Page
         }
     }
 }
+
+

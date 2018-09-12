@@ -18,3 +18,6 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/dashboard', function(){
   return view('dashboard');
 });
+Route::get('/test', function(){
+  return view('dashboard');
+});

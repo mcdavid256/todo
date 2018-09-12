@@ -80,7 +80,6 @@ sidebar navigation
                 &.active,
                 &:hover {
                     color: $themecolor;
-                    background: #fff;
                     i {
                         color: $themecolor;
                     }
@@ -106,7 +105,7 @@ sidebar navigation
                 color: $muted;
                 font-weight: 500;
             }
-            &.nav-divider {
+            &.nav-devider {
                 height: 1px;
                 background: $border;
                 display: block;
@@ -129,7 +128,7 @@ sidebar navigation
         }
         &.active {
             font-weight: 400;
-            background: #fff;
+            background: #242933;
             color: $themecolor-alt;
             border-left: 3px solid $themecolor;
         }

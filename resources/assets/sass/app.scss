@@ -16,11 +16,17 @@ File: scss
  *	7. Widgets
  *	8. Custom Templates
  */
-
+ // Import Bootstrap source files
+ @import "node_modules/bootstrap/scss/bootstrap";
+ 
  @import 'variable';
  @import 'style';
  @import 'sidebar';
  @import 'pages/pages';
+ @import 'node_modules/simple-line-icons/scss/simple-line-icons';
+ @import 'node_modules/weather-icons-sass/sass/weather-icons.min';
+ @import 'icons/themify-icons/themify-icons';
+ @import 'icons/iconmind/iconmind';
  @import 'widgets/widgets';
  @import 'grid';
  @import 'responsive';

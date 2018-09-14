@@ -296,7 +296,7 @@
                                         <div class="dw-user-box">
                                             <div class="u-img"><img src="{{asset('images/users/1.jpg')}}" alt="user"></div>
                                             <div class="u-text">
-                                                <h4>Steave Jobs</h4>
+                                                <h4>{{ Auth::user()->name }}</h4>
                                                 <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
                                         </div>
                                     </li>
@@ -307,7 +307,7 @@
                                     <li role="separator" class="divider"></li>
                                     <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="{{ route('logout') }}"><i class="fa fa-power-off"></i> Logout</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -381,7 +381,7 @@
                     <div class="col-2">
                         <div class="card">
                           <div class="card-body">
-                              <strong>Card Title</strong>
+                              <h5>Card Title</h5>
                           </div>
                           <div class="card-body">
                               This is some text within a card block.

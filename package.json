@@ -20,6 +20,10 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+        "flag-icon": "^2.5.0",
+        "flag-icon-css": "^3.0.0",
+        "icomoon": "^1.0.0",
+        "material-design-iconic-font": "^2.2.0",
         "simple-line-icons": "^2.4.1",
         "themify-icons": "^1.0.0",
         "weather-icons": "^1.3.2",

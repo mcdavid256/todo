@@ -18,7 +18,7 @@ File: scss
  */
  // Import Bootstrap source files
  @import "node_modules/bootstrap/scss/bootstrap";
- 
+
  @import 'variable';
  @import 'style';
  @import 'sidebar';
@@ -27,6 +27,8 @@ File: scss
  @import 'node_modules/weather-icons-sass/sass/weather-icons.min';
  @import 'icons/themify-icons/themify-icons';
  @import 'icons/iconmind/iconmind';
+ @import 'node_modules/flag-icon-css/sass/flag-icon';
+ @import 'node_modules/material-design-iconic-font/scss/material-design-iconic-font';
  @import 'widgets/widgets';
  @import 'grid';
  @import 'responsive';

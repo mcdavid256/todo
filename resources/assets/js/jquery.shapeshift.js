@@ -21,10 +21,10 @@
         dragWhitelist: "*",
         dropCutoff: 0,
         dropWhitelist: "*",
-        gutterX: 30,
-        gutterY: 10,
+        gutterX: 5,
+        gutterY: 5,
         minHeight: 200,
-        paddingY: 30,
+        paddingY: 0,
         paddingX: 0,
         selector: ""
       };

@@ -5,7 +5,8 @@ $(document).ready(function() {
 
   // Initial Shapeshift
   $containers.shapeshift({
-    paddingY: 20
+    gutterX: 20,
+    gutterY: 1
   });
 
 

@@ -1,0 +1,16 @@
+.shift {
+  position: relative;
+}
+
+.shift .card {
+  position: absolute;
+}
+
+.shift .card .placeholder {
+}
+
+.shift .card.ss-moving {
+  cursor: move;
+  z-index: 9999;
+  opacity: .7;
+}

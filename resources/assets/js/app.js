@@ -5,13 +5,16 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./jquery.min');
-require('./bootstrap');
-require('./custom');
+
+// require('./bootstrap');
 require('./jquery.sparkline.min');
+require('./popper.min');
 require('./jQuery.style.switcher');
 require('./perfect-scrollbar.jquery.min');
-require('./popper.min');
 require('./sidebarmenu');
 require('./sticky-kit.min');
 require('./waves');
+require('./shapeshift.custom');
+require('./jquery.ui.touch-punch.min');
+require('./jquery.shapeshift');
+require('./custom');

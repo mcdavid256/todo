@@ -14,7 +14,6 @@ require('./perfect-scrollbar.jquery.min');
 require('./sidebarmenu');
 require('./sticky-kit.min');
 require('./waves');
-require('./shapeshift.custom');
 require('./jquery.ui.touch-punch.min');
 require('./jquery.shapeshift');
-require('./custom');
+// require('./custom');

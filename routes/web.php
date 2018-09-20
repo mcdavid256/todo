@@ -15,9 +15,7 @@ use App\Post;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/dashboard', function(){
-  return view('dashboard');
-});
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/test', function(){
   return view('dashboard');
 });

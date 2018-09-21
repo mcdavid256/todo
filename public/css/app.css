@@ -10466,7 +10466,7 @@ Layouts
   margin-bottom: 30px;
 }
 
-.newnoteform .form-control input:focus {
+.newnoteform .form-control textarea:focus, .newnoteform .form-control input:focus {
   outline: none;
 }
 

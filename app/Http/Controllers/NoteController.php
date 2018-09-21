@@ -22,9 +22,9 @@ class NoteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+
     }
 
     /**
@@ -35,7 +35,16 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $note = Note::create([
+        'title'=> $request->title,
+        'category'=> 1,
+        'body'=> $request->body,
+        'position'=> 0,
+        'pinned'=> 0,
+      ]);
+
+      return 'Done';
+
     }
 
     /**

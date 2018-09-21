@@ -5,6 +5,8 @@
 <!-- ============================================================== -->
 <!-- Start Page Content -->
 <!-- ============================================================== -->
+
+{{csrf_field()}}
 <div class="row">
   <form id="newnoteform" class="col-md-4 offset-md-4">
     <div class="form-group">
@@ -17,26 +19,8 @@
   </form>
 </div>
 
-<script type="text/javascript">
-  $( "#newnote" ).focus(function() {
-  $( "#close" ).removeClass( "invisible" );
-  $( "#body" ).removeClass( "invisible" );
-  $( "#newnote" ).removeClass( "newnote" );
-  $( "#newnote" ).attr("placeholder", "Title");
-  $( "#newnoteform" ).addClass( "newnoteform" );
-  });
-  $( "#body" ).blur(function() {
-  $( "#newnoteform" ).removeClass( "newnoteform" );
-  $( "#body" ).addClass( "invisible" );
-  $( "#close" ).addClass( "invisible" );
-  $( "#newnote" ).addClass( "newnote" );
-  var title = $("#newnote").val();
-  var body = $("#body").val();
-  console.log(title,body);
-  });
-</script>
 
-  <div class="row shift">
+  <div id="shift" class="row shift">
       @foreach($notes as $note)
           <div class="card col-md-2">
             <div class="card-header">
@@ -49,17 +33,8 @@
           </div>
       @endforeach
   </div>
-
 <!-- ============================================================== -->
 <!-- End PAge Content -->
 <!-- ============================================================== -->
 
-@endsection
-
-@section('shapeshift')
-<script>
-$(document).ready(function() {
-  $(".shift").shapeshift();
-})
-</script>
 @endsection

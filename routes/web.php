@@ -16,6 +16,8 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('note', 'NoteController@index');
+Route::post('note', 'NoteController@store');
 Route::get('/test', function(){
   return view('dashboard');
 });

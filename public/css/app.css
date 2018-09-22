@@ -10470,6 +10470,10 @@ Layouts
   outline: none;
 }
 
+.newnoteform .navbar-collapse {
+  background-color: #fff;
+}
+
 /*
 Template Name: Admin Pro Admin
 Author: Wrappixel

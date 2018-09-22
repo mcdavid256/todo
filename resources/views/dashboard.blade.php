@@ -27,7 +27,7 @@
               <h5 class="card-title">{{$note->title}}</h5>
             </div>
             <div class="card-body">
-              <div class="card-text">{{$note->body}}</div>
+              <div class="card-text">{{Str::words($note->body,25, " ...")}}</div>
             </div>
             <div class="card-footer">This is some text within a card block.</div>
           </div>

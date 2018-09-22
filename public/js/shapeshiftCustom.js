@@ -3,6 +3,20 @@ function init(){
   $(".shift").shapeshift();
 }
 
+function saveNewPositions(){
+  var positions = [];
+  var indexes = [];
+  $(".updated").each(function(){
+    positions.push([$(this).attr('data-index')]);
+    indexes.push([$(this).attr('data-position')]);
+    $(this).removeClass('updated');
+  });
+
+  $.post('position', {'positions':positions, 'indexes':indexes, '_token':$('input[name=_token]').val()}, function(data){
+    console.log(data);
+  });
+}
+
 $(document).ready(function() {
 
 init();
@@ -19,6 +33,13 @@ $containers = $(".shift")
 
    // console.log("Item", $(selected))
    // console.log("is now in position", $(selected).index())
+   //
+   $(this).children().each(function(index){
+     if($(this).attr('data-position') != (index+1)){
+       $(this).attr('data-position', (index+1)).addClass('updated')
+     }
+   });
+    saveNewPositions();
    });
 
 
@@ -53,7 +74,7 @@ $containers = $(".shift")
      var body = $("#body").val();
 
        $.post('note', {'title':title, 'body':body, '_token':$('input[name=_token]').val()}, function(data){
-         console.log(data);
+         // console.log(data);
          $("#shift").empty();
          $('#shift').load(location.href + ' #shift >*', '', function(){
             // Reinitialise plugins:

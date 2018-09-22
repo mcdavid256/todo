@@ -78,7 +78,20 @@ class NoteController extends Controller
      */
     public function update(Request $request, Note $note)
     {
-        //
+
+      $indexes = array_column($request->indexes, 0);
+      $positions = array_column($request->positions, 0);
+
+      $newPositions = array();
+      foreach($indexes AS $key => $value) {
+          // $newPositions[$key] = $value . ", " . $positions[$key];
+          // $newPositions[$key] = $value;
+          Note::where('id', '=', $positions[$key])
+          ->update(['position' => $value]);
+      }
+
+      return 'Done';
+
     }
 
     /**

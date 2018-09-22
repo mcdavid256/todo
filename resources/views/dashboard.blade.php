@@ -22,7 +22,7 @@
 
   <div id="shift" class="row shift">
       @foreach($notes as $note)
-          <div class="card col-md-2">
+          <div data-index="{{$note->id}}" data-poistion="{{$note->position}}" class="card col-md-2">
             <div class="card-header">
               <h5 class="card-title">{{$note->title}}</h5>
             </div>

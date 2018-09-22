@@ -14,7 +14,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-      $notes = Note::all()->sortByDesc("id");;
+      $notes = Note::all()->sortBy("position");;
       return view('dashboard', compact('notes'));
     }
 

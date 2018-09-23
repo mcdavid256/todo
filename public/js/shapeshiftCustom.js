@@ -1,6 +1,16 @@
 
 function init(){
   $(".shift").shapeshift();
+
+  // Handle Card Icons
+  $( ".card" ).hover(
+    function() {
+      $( this ).find( ".mdi" ).removeClass("invisible", 1000, "easeInQuad" );
+    }, function() {
+      $( this ).find( ".mdi" ).addClass("invisible", 1000, "easeOutQuad");
+    }
+  );
+  
 }
 
 function saveNewPositions(){

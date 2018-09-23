@@ -29,7 +29,22 @@
             <div class="card-body">
               <div class="card-text">{{Str::words($note->body,25, " ...")}}</div>
             </div>
-            <div class="card-footer">This is some text within a card block.</div>
+            <div class="card-footer">
+              <!-- <div class="mdi-set flex-container space-between">
+                  <li><span class="mdi-clock flex-item"></span></li>
+                  <li><span class="mdi-account-plus flex-item"></span></li>
+                  <li><span class="mdi-palette flex-item"></span></li>
+                  <li><span class="mdi-package-down flex-item"></span></li>
+                  <li><span class="mdi-dots-vertical flex-item"></span></li>
+              </div> -->
+              <ul class="flex-container space-between">
+                <li data-balloon="Remind me" data-balloon-pos="down" class="flex-item"><span class="mdi invisible mdi-clock"></span></li>
+                <li data-balloon="Collaborate" data-balloon-pos="down" class="flex-item"><span class="mdi invisible mdi-account-plus"></span></li>
+                <li data-balloon="Change color" data-balloon-pos="down" class="flex-item"><span class="mdi invisible mdi-palette"></span></li>
+                <li data-balloon="Archive" data-balloon-pos="down" class="flex-item"><span class="mdi  invisible mdi-package-down"></span></li>
+                <li data-balloon="More" data-balloon-pos="down" class="flex-item"><span class="mdi  invisible mdi-dots-vertical"></span></li>
+              </ul>
+            </div>
           </div>
       @endforeach
   </div>

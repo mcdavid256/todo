@@ -942,3 +942,27 @@ Layouts
   }
 
 }
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  list-style: none;
+}
+.space-between {
+  justify-content: space-between;
+}
+.mdi{
+  font-size: 18px;
+  color:#747474;
+}
+.mdi:hover{
+  cursor: pointer;
+  color:#212121;
+}
+.mdi .invisible{
+  visibility: hidden;
+}
+.mdi .visible{
+  visibility:visible;
+}

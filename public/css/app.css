@@ -10474,6 +10474,39 @@ Layouts
   background-color: #fff;
 }
 
+.flex-container {
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mdi {
+  font-size: 18px;
+  color: #747474;
+}
+
+.mdi:hover {
+  cursor: pointer;
+  color: #212121;
+}
+
+.mdi .invisible {
+  visibility: hidden;
+}
+
+.mdi .visible {
+  visibility: visible;
+}
+
 /*
 Template Name: Admin Pro Admin
 Author: Wrappixel

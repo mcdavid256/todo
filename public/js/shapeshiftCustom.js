@@ -1,18 +1,147 @@
 
 function init(){
+// ================================================================================================================
+//  Function initialisers
+// ================================================================================================================
+// *** =================================
+// ***Initialise shapeshift
+// ***==================================
+
+  $containers = $(".shift");
+  // console.log ("It works")
+  //
   $(".shift").shapeshift();
 
   // Handle Card Icons
   $( ".card" ).hover(
     function() {
-      $( this ).find( ".mdi" ).removeClass("invisible", 1000, "easeInQuad" );
+      $( this ).find( ".space-between" ).animate({opacity: 1}, 300);
     }, function() {
-      $( this ).find( ".mdi" ).addClass("invisible", 1000, "easeOutQuad");
+      $( this ).find( ".space-between" ).animate({opacity: 0}, 250);
     }
   );
-  
+
+
+// *** =================================
+// ***Initialise More Dropdown list
+// ***==================================
+
+  $(document).click(function(e) {
+    if (!$(e.target).is('a')) {
+        $('.collapse').collapse('hide');
+    }
+  });
+
+
+// *** =================================
+// ***Initialise Text Fit
+// ***==================================
+//
+// // Fit text
+// var fitties = [];
+// fitties = fitty('.fit', {
+//   minSize: 14,
+//   maxSize: 250
+// });
+
+// *** =================================
+// ***Initialise Note Delete Feature
+// ***==================================
+$('.delete').on('click', function(e){
+  // e.preventDefault()
+  var id = $(this).attr('recordId');
+  deleteNote(id);
+});
+
+// *** =================================
+// ***Expand New Note Form when user
+// ***focuses on Take a note input
+// ***==================================
+$( "#newnote" ).focus(function() {
+$( "#close" ).removeClass( "invisible" );
+$( "#body" ).removeClass( "invisible" );
+$( "#newnote" ).removeClass( "newnote" );
+$( "#newnote" ).attr("placeholder", "Title");
+$( "#newnoteform" ).addClass( "newnoteform" );
+});
+
+
+// *** =================================
+// ***Initialise Note Form Processor
+// ***==================================
+$('#body').on('blur', function(e){
+  $( "#newnoteform" ).removeClass( "newnoteform" );
+  $( "#body" ).addClass( "invisible" );
+  $( "#close" ).addClass( "invisible" );
+  $( "#newnote" ).addClass( "newnote" );
+  var title = $("#newnote").val();
+  var body = $("#body").val();
+
+   processNoteForm(title, body);
+
+ });
+
+
+ // *** =================================
+ // ***Initalise note position processor
+ // ***==================================
+ $containers.on("ss-rearranged", function(e, selected) {
+
+   $(this).children().each(function(index){
+     if($(this).attr('data-position') != (index+1)){
+       $(this).attr('data-position', (index+1)).addClass('updated')
+     }
+   });
+    saveNewPositions();
+   });
+
 }
 
+// ================================================================================================================
+//Functions
+// ================================================================================================================
+
+/**
+ * Processes the new note form. Saves Note when body textarea loses focus.
+ * @param  {string} title the title of the note. Picked from the title input.
+ * @param  {string} body  the body of the note. Picked from the Body textarea.
+ */
+function processNoteForm(title, body){
+  $.post('note', {'title':title, 'body':body, '_token':$('input[name=_token]').val()}, function(data){
+    // console.log(data);
+    $("#shift").empty();
+    $('#shift').load(location.href + ' #shift >*', '', function(){
+       // Reinitialise plugins:
+       init();
+    });
+      //Empty form values and form fields to normal
+    $("#newnote").val('');
+    $( "#newnote" ).attr("placeholder", "Take a note...");
+    $( "#body" ).val('');
+  });
+}
+
+
+/**
+ * Processes note deletion. Takes the note id and posts it to NoteController destroy method.
+ * @param  {[integer]} id Note ID
+ */
+function deleteNote(id){
+  $.post('delete', {'id':id, '_token':$('input[name=_token]').val()}, function(data){
+    console.log(data);
+    $("#shift").empty();
+    $('#shift').load(location.href + ' #shift >*', '', function(){
+       // Reinitialise plugins:
+       init();
+    });
+  });
+}
+
+
+/**
+ * Processes notes position. Sends data to to the NoteController update function. Note positions determines
+ * how the notes are organised in the dashboard.
+ */
 function saveNewPositions(){
   var positions = [];
   var indexes = [];
@@ -27,75 +156,21 @@ function saveNewPositions(){
   });
 }
 
+
+// ================================================================================================================
+//DOM Processing
+// ================================================================================================================
+
+/**
+ * Make sure page has loaded fully.
+ */
 $(document).ready(function() {
 
-init();
-$containers = $(".shift")
-// console.log ("It works")
-
- $containers.on("ss-rearranged", function(e, selected) {
-
-   // console.log ("This container:", $(this))
-   // console.log ("Has rearranged this item:", $(selected))
-   // console.log ("Into this position:", $(selected).index())
-
-   // get positions
-
-   // console.log("Item", $(selected))
-   // console.log("is now in position", $(selected).index())
-   //
-   $(this).children().each(function(index){
-     if($(this).attr('data-position') != (index+1)){
-       $(this).attr('data-position', (index+1)).addClass('updated')
-     }
-   });
-    saveNewPositions();
-   });
-
-
-   $( "#newnote" ).focus(function() {
-   $( "#close" ).removeClass( "invisible" );
-   $( "#body" ).removeClass( "invisible" );
-   $( "#newnote" ).removeClass( "newnote" );
-   $( "#newnote" ).attr("placeholder", "Title");
-   $( "#newnoteform" ).addClass( "newnoteform" );
-   });
-   // $( "#body" ).blur(function() {
-   // $( "#newnoteform" ).removeClass( "newnoteform" );
-   // $( "#body" ).addClass( "invisible" );
-   // $( "#close" ).addClass( "invisible" );
-   // $( "#newnote" ).addClass( "newnote" );
-   // var title = $("#newnote").val();
-   // var body = $("#body").val();
-   //
-   //   $.post('note', {'title':title, 'body':body, '_token':$('input[name=_token]').val()}, function(data){
-   //     console.log(data);
-   //     $("#shift").empty();
-   //     $('#shift').load(location.href + ' #shift >*', '');
-   //   });
-   // });
-
-   $('#body').on('blur', function(e){
-     $( "#newnoteform" ).removeClass( "newnoteform" );
-     $( "#body" ).addClass( "invisible" );
-     $( "#close" ).addClass( "invisible" );
-     $( "#newnote" ).addClass( "newnote" );
-     var title = $("#newnote").val();
-     var body = $("#body").val();
-
-       $.post('note', {'title':title, 'body':body, '_token':$('input[name=_token]').val()}, function(data){
-         // console.log(data);
-         $("#shift").empty();
-         $('#shift').load(location.href + ' #shift >*', '', function(){
-            // Reinitialise plugins:
-            init();
-         });
-         $("#newnote").val('');
-         $( "#newnote" ).attr("placeholder", "Take a note...");
-         $( "#body" ).val('');
-       });
-    });
+/**
+ * Initialise all scripts
+ */
+    init();
 
 
 
- });
+});

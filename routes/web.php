@@ -19,6 +19,7 @@ Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('note', 'NoteController@index');
 Route::post('note', 'NoteController@store');
 Route::post('position', 'NoteController@update');
+Route::post('delete', 'NoteController@destroy');
 Route::get('/test', function(){
   return view('dashboard');
 });

@@ -10487,6 +10487,7 @@ Layouts
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  opacity: 0;
 }
 
 .mdi {
@@ -10499,12 +10500,26 @@ Layouts
   color: #212121;
 }
 
-.mdi .invisible {
+.mdi .unseen {
   visibility: hidden;
 }
 
-.mdi .visible {
-  visibility: visible;
+.mdi .seen {
+  opacity: 1;
+}
+
+.fit {
+  white-space: normal !important;
+}
+
+.card-more {
+  z-index: 99;
+  left: 600;
+  width: 140px;
+}
+
+.card-more .list-group-item {
+  border: none;
 }
 
 /*

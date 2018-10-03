@@ -2,6 +2,10 @@
 @section('title', 'Dashboard')
 @section('content')
 
+<style>
+
+</style>
+
 <!-- ============================================================== -->
 <!-- Start Page Content -->
 <!-- ============================================================== -->
@@ -13,7 +17,7 @@
       <input type="text" class="form-control newnote" id="newnote" aria-describedby="noteTitle" placeholder="Take a note...">
     </div>
     <div class="form-group">
-      <textarea class="form-control invisible" id="body" aria-describedby="noteText"></textarea>
+      <textarea class="form-control form-control-no-border invisible" id="body" aria-describedby="noteText"></textarea>
     </div>
     <a id="close" class="pull-right invisible" href="#"><small>CLOSE</small></a>
   </form>
@@ -23,10 +27,10 @@
   <div id="shift" class="row shift">
       @foreach($notes as $note)
           <div data-index="{{$note->id}}" data-poistion="{{$note->position}}" class="card col-md-2">
-            <div class="card-header">
+            <div class="card-header" data-toggle="modal" data-target="#modal{{$note->id}}">
               <h5 class="card-title">{{$note->title}}</h5>
             </div>
-            <div class="card-body">
+            <div class="card-body" data-toggle="modal" data-target="#modal{{$note->id}}">
               <div class="card-text fit">{{Str::words($note->body,25, " ...")}}</div>
             </div>
             <div class="card-footer">
@@ -54,6 +58,29 @@
               </ul>
             </div>
           </div>
+
+          <!-- ========================================================================================= -->
+          <!-- Modal -->
+
+          <div data-index="{{$note->id}}" note-position="{{$note->position}}" class="modal fade" id="modal{{$note->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+
+              <div class="modal-content">
+                <form id="editNoteForm">
+                  <div class="modal-header">
+                      <input type="text"  class="form-control-no-border col-md-12 modal-title" id="editNoteTitle" value="{{$note->title}}">
+                  </div>
+                  <div class="modal-body">
+                    <textarea  class="form-control-no-border col-md-12 " id="noteBodyEdit" aria-describedby="noteBodyEdit">{{$note->body}}</textarea>
+                  </div>
+                </form>
+                <div class="modal-footer">
+                  <a class="card-close" data-dismiss="modal"><small>CLOSE</small></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ========================================================================================= -->
       @endforeach
   </div>
 <!-- ============================================================== -->

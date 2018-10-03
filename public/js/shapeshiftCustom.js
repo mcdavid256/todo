@@ -81,6 +81,23 @@ $('#body').on('blur', function(e){
 
  });
 
+ // *** =================================
+ // ***Initialise Note Edit Form Processor
+ // ***==================================
+ $('.card-close').on('click', function(e){
+
+   var parent = $(this).parent().parent().parent().parent();
+   var title = parent.find("#editNoteTitle").val();
+   var body = parent.find("#noteBodyEdit").val();
+   var id = parent.attr("data-index");
+   var position = parent.attr("note-position");
+
+   // console.log(id+":"+title+":"+body);
+
+    processNoteEditForm(id, title, body, position);
+
+  });
+
 
  // *** =================================
  // ***Initalise note position processor
@@ -94,6 +111,51 @@ $('#body').on('blur', function(e){
    });
     saveNewPositions();
    });
+
+   // *** =================================
+   // ***Initialise form textarea autoresize
+   // ***==================================
+
+   // $("textarea").height( $("textarea")[0].scrollHeight );
+   autosize($('textarea'));
+
+
+   // *** =================================
+   // ***Initialise Modal form textarea height on
+   // click
+   // ***==================================
+
+   $('.modal').on('shown.bs.modal', function (e) {
+      var val = $(this).find("#noteBodyEdit");
+      var sHeight = $(this).find("#noteBodyEdit")[0].scrollHeight;
+      val.animate({height: sHeight+"px"},300);
+      //set focus on input
+      val.focus();
+
+  })
+
+  $('.modal').on('show.bs.modal', function (e) {
+     var val = $(this).find("#noteBodyEdit");
+     //set focus on input
+     val.focus();
+     val.scrollTop();
+     val.setCursorPosition(0);
+    // console.log(sHeight);
+ })
+
+  $('.modal').on('hide.bs.modal', function (e) {
+     var val = $(this).find("#noteBodyEdit");
+     val.animate({height: "50px"},150);
+
+    // console.log(sHeight);
+ })
+
+
+
+   // *** =================================
+   // ***Initialise Edit Function
+   // ***==================================
+
 
 }
 
@@ -118,6 +180,24 @@ function processNoteForm(title, body){
     $("#newnote").val('');
     $( "#newnote" ).attr("placeholder", "Take a note...");
     $( "#body" ).val('');
+  });
+}
+
+
+/**
+ * Processes the new note form. Saves Note when body textarea loses focus.
+ * @param  {string} title the title of the note. Picked from the title input.
+ * @param  {string} body  the body of the note. Picked from the Body textarea.
+ */
+function processNoteEditForm(id, title, body, position){
+  $.post('editnote', {'id':id, 'title':title, 'body':body, 'position':position, '_token':$('input[name=_token]').val()}, function(data){
+    console.log(data);
+    $("#shift").empty();
+    $('#shift').load(location.href + ' #shift >*', '', function(){
+       // Reinitialise plugins:
+       init();
+    });
+
   });
 }
 
@@ -156,6 +236,24 @@ function saveNewPositions(){
   });
 }
 
+/**
+ * Set Cursor position when modal pops up.
+ */
+$.fn.setCursorPosition = function(pos) {
+  this.each(function(index, elem) {
+    if (elem.setSelectionRange) {
+      elem.setSelectionRange(pos, pos);
+    } else if (elem.createTextRange) {
+      var range = elem.createTextRange();
+      range.collapse(true);
+      range.moveEnd('character', pos);
+      range.moveStart('character', pos);
+      range.select();
+    }
+  });
+  return this;
+  init();
+};
 
 // ================================================================================================================
 //DOM Processing

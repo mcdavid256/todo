@@ -18,9 +18,7 @@ File: scss
  */
  // Import Bootstrap source files
  @import "node_modules/bootstrap/scss/bootstrap";
-
  @import 'variable';
- @import 'style';
  @import 'sidebar';
  @import 'pages/pages';
  @import 'node_modules/simple-line-icons/scss/simple-line-icons';
@@ -33,3 +31,4 @@ File: scss
  @import 'grid';
  @import 'responsive';
  @import 'shapeshift';
+ @import 'style';

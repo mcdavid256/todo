@@ -59,14 +59,22 @@ class NoteController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Update the specified resource in storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Note  $note
      * @return \Illuminate\Http\Response
      */
-    public function edit(Note $note)
+    public function editnote(Request $request, Note $note)
     {
-        //
+
+        Note::where('id', '=', $request->id)
+        ->update([
+          'title' => $request->title,
+          'body' => $request->body
+        ]);
+
+        return "Done";
     }
 
     /**
@@ -76,7 +84,7 @@ class NoteController extends Controller
      * @param  \App\Note  $note
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Note $note)
+    public function updateposition(Request $request, Note $note)
     {
 
       $indexes = array_column($request->indexes, 0);

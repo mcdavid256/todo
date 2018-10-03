@@ -14,3 +14,16 @@
   z-index: 9999;
   opacity: .7;
 } */
+.form-control-no-border:focus {
+border-color:none;
+outline: 0;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+
+.form-control-no-border {
+border-color:none;
+outline: 0;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
